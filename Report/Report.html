@@ -1,0 +1,33 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>接口名字</th>
+      <th>api</th>
+      <th>参数</th>
+      <th>比对字段</th>
+      <th>预期结果</th>
+      <th>比对结果</th>
+      <th>接口返回值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>快递查询</td>
+      <td>http://www.kuaidi100.com/query</td>
+      <td>zhongtong&amp;postid=75163393014458</td>
+      <td>state</td>
+      <td>3</td>
+      <td>失败</td>
+      <td>{"message":"参数错误","nu":"","ischeck":"0","condition":"","com":"","status":"400","state":"0","data":[]}</td>
+    </tr>
+    <tr>
+      <td>天气查询</td>
+      <td>https://www.apiopen.top/weatherApi</td>
+      <td>city=上海</td>
+      <td>msg</td>
+      <td>成功</td>
+      <td>成功</td>
+      <td>{"code":200,"msg":"成功!","data":{"yesterday":{"date":"12日星期一","high":"高温 34℃","fx":"西南风","low":"低温 27℃","fl":"\u003c![CDATA[3-4级]]\u003e","type":"阴"},"city":"上海","aqi":null,"forecast":[{"date":"13日星期二","high":"高温 34℃","fengli":"\u003c![CDATA[\u003c3级]]\u003e","low":"低温 28℃","fengxiang":"南风","type":"阴"},{"date":"14日星期三","high":"高温 35℃","fengli":"\u003c![CDATA[\u003c3级]]\u003e","low":"低温 27℃","fengxiang":"北风","type":"多云"},{"date":"15日星期四","high":"高温 33℃","fengli":"\u003c![CDATA[\u003c3级]]\u003e","low":"低温 27℃","fengxiang":"西北风","type":"多云"},{"date":"16日星期五","high":"高温 34℃","fengli":"\u003c![CDATA[4-5级]]\u003e","low":"低温 27℃","fengxiang":"西北风","type":"多云"},{"date":"17日星期六","high":"高温 34℃","fengli":"\u003c![CDATA[3-4级]]\u003e","low":"低温 27℃","fengxiang":"东南风","type":"多云"}],"ganmao":"各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒。","wendu":"27"}}</td>
+    </tr>
+  </tbody>
+</table>
