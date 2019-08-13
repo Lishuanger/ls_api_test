@@ -1,5 +1,6 @@
 项目结构
 # ls_api_test
+
    #base  基础类
       #assist.py 断言
       #baserequest.py 网络请求
