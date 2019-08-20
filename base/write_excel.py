@@ -1,29 +1,34 @@
 import xlwt
+import xlrd
+from xlutils.copy import copy
+
 from common.config import PATH
+import os
 
 
 def write_result(result):
-    work_book = xlwt.Workbook(encoding='utf-8')
-    sheet = work_book.add_sheet('result')
-    title = ['接口名字','api', '参数', '比对字段','预期结果', '比对结果', '接口返回值']
-    i = 0
-    j = 0
-    while i < len(title):
-        sheet.write(0, i, title[i])
-        sheet.col(i).width = 256 * 30
-        i = i + 1
+    workbook = xlrd.open_workbook(PATH("../Report/result.xls"))
+    sheets = workbook.sheet_names()
+    worksheet = workbook.sheet_by_name(sheets[0])
+    rows_old = worksheet.nrows
+    new_workbook = copy(workbook)
+    new_worksheet = new_workbook.get_sheet(0)
 
-    while j<len(result):
-        item = result[j]
-        sheet.write(j+1,0,item['name'])
-        sheet.write(j+1,1,item['url'])
-        sheet.write(j+1,2,item['params'])
-        sheet.write(j+1,3,item['content'])
-        sheet.write(j+1,4,item['hope'])
-        sheet.write(j+1,6,item['response'])
-        sheet.write(j+1,5,item['result'])
+    i=0
+    j = rows_old-1
+    print(result)
+
+    while i<len(result):
+        item = result[i]
+        new_worksheet.write(j+1,0,item['name'])
+        new_worksheet.write(j+1,1,item['url'])
+        new_worksheet.write(j+1,2,item['params'])
+        new_worksheet.write(j+1,3,item['content'])
+        new_worksheet.write(j+1,4,item['hope'])
+        new_worksheet.write(j+1,6,item['response'])
+        new_worksheet.write(j+1,5,item['result'])
         j = j + 1
-    work_book.save(PATH("../Report/result.xls"))
-
+        i=i+1
+        new_workbook.save(PATH("../Report/result.xls"))
 
 

@@ -7,6 +7,7 @@
       #baserequest.py 网络请求
       #read_excel.py  读excel
       #write_excel.py 写excel
+      #base_init.py  初始化文件
       
       
    #common 公共类

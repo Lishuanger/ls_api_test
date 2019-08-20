@@ -19,8 +19,8 @@ htmlReportPath = PATH("../Report/Report.html")
 recvaddress = ['15168208716@163.com']
 
 #发件人
-sendaddr_name = '此处填写邮箱'
-sendaddr_pswd = '邮箱密码'
+sendaddr_name = 'shuang.Li@lcare.net'
+sendaddr_pswd = 'ls123456'
 
 
 class SendMail:
